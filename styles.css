@@ -1,7 +1,21 @@
 #board {
     margin: auto;
-    height: 500px;
-    width: 500px;
+    max-height: 500px;
+    max-width: 500px;
     border: 1px solid;
     display: flex;
+    flex-wrap: wrap;
+}
+
+.line {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    flex: 1;
+}
+
+.square:hover {
+    background-color: darkorange;
 }

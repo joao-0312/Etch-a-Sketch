@@ -21,8 +21,18 @@ for (let i = 0; i < resolution; i++) {
     board.appendChild(line);
 }
 
+let drawing = false;
+
+board.addEventListener("mousedown", () => {
+    drawing = true;
+});
+
 document.querySelectorAll(".square").forEach((square) => {
-    square.addEventListener("click", () => {
-        square.style.backgroundColor = "black";
-    })
-})
+    square.addEventListener("mouseover", () => {
+        if (drawing) square.style.backgroundColor = "black";
+    });
+}); 
+
+board.addEventListener("mouseup", () => {
+    drawing = false;
+});

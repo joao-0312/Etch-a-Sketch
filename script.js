@@ -1,7 +1,8 @@
 let board = document.querySelector("#board");
 const boardSize = 500;
 let resolution = 16;
-let lineHeight = boardSize/resolution; 
+let lineHeight = boardSize/resolution;
+
 
 for (let i = 0; i < resolution; i++) {
     let line = document.createElement("div");
@@ -19,3 +20,9 @@ for (let i = 0; i < resolution; i++) {
 
     board.appendChild(line);
 }
+
+document.querySelectorAll(".square").forEach((square) => {
+    square.addEventListener("click", () => {
+        square.style.backgroundColor = "black";
+    })
+})

@@ -23,16 +23,17 @@ for (let i = 0; i < resolution; i++) {
 
 let drawing = false;
 
-board.addEventListener("mousedown", () => {
+document.querySelector("body").addEventListener("mousedown", () => {
     drawing = true;
 });
 
 document.querySelectorAll(".square").forEach((square) => {
+    square.addEventListener("mousedown", () => square.style.backgroundColor = "black");
     square.addEventListener("mouseover", () => {
         if (drawing) square.style.backgroundColor = "black";
     });
 }); 
 
-board.addEventListener("mouseup", () => {
+document.querySelector("body").addEventListener("mouseup", () => {
     drawing = false;
 });
